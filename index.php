@@ -1,6 +1,16 @@
 <?php 
-	use Shares\Bootstrap;
-	require 'vendor/autoload.php';
 
+
+	require 'classes/Bootstrap.php';
+	require 'classes/Controller.php';
+	require 'controllers/Home.php';
+	require 'controllers/Users.php';
+	require 'controllers/Shares.php';
+	
 	$bootstrap = new Bootstrap($_GET);
-	$bootstrap->createController();
+	$controller = $bootstrap->createController();
+
+	if($controller){
+		$controller->executeAction();
+	}
+
