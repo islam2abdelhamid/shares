@@ -6,9 +6,25 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit30877a60008cafcde1059c23e6559699
 {
+    public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Shares\\' => 7,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Shares\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/classes',
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit30877a60008cafcde1059c23e6559699::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit30877a60008cafcde1059c23e6559699::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
